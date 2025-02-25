@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image & Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #e3e3e3;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+        .upload-area {
+            flex: 1 1 100%;
+            padding: 20px;
+            border: 2px dashed #4A90E2;
+            text-align: center;
+            margin: 10px;
+        }
+        .workspace {
+            flex: 3 1 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .canvas {
+            flex: 1;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            position: relative;
+            cursor: pointer; /* Indicate selectable area */
+        }
+        .toolbar {
+            background-color: #f1f1f1;
+            padding: 10px;
+            display: none; /* Hide initially */
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .side-panel {
+            width: 250px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-left: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+        .editing-tools {
+            display: none;
+            margin-top: 10px;
+        }
+        .download-button {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        footer {
+            background-color: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* Media Queries */
+        @media (min-width: 600px) {
+            .upload-area {
+                flex: 1 1 30%;
+            }
+            .workspace {
+                flex: 3 1 70%;
+            }
+        }
+        /* Hide upload area on mobile */
+        @media (max-width: 599px) {
+            .upload-area {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Image & Text Editor</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Upload</a>
+    <a href="#" onclick="toggleEditingTools()">Edit</a>
+</nav>
+
+<div class="container">
+    <div class="upload-area">
+        <h2>Upload Your Files</h2>
+        <p>Drag and drop your images or documents here</p>
+        <input type="file" id="fileInput" accept="image/*" onchange="handleFileUpload(event)">
+    </div>
+
+    <div class="workspace">
+        <div class="toolbar" id="toolbar">
+            <button>Select</button>
+            <button>Text Edit</button>
+            <button>Image Manipulation</button>
+            <button onclick="confirmEditing()">Confirm Edit</button>
+            <button>Undo</button>
+            <button>Redo</button>
+        </div>
+        <div class="canvas" id="canvas" onclick="selectArea()">
+            <p>Editing Canvas - Your image/document will appear here</p>
+        </div>
+        <div class="side-panel">
+            <h3>Properties</h3>
+            <p id="properties" style="display: none;">Details of selected item will appear here.</p>
+            <h3>Layer Management</h3>
+            <p id="layerManagement" style="display: none;">Manage layers here.</p>
+            <div class="editing-tools" id="editingTools">
+                <h3>Editing Tools</h3>
+                <button>Lasso Tool</button>
+                <button>Rectangular Textbox</button>
+            </div>
+            <button class="download-button" id="downloadButton" onclick="downloadFile()">Download</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Help | Support | FAQs</p>
+</footer>
+
+<script>
+    let fileUploaded = false;
+
+    function handleFileUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+            // Simulate rendering the file on the canvas
+            document.getElementById('canvas').innerHTML = `<p>Uploaded File: ${file.name}</p>`;
+            fileUploaded = true;
+            document.getElementById('toolbar').style.display = 'flex'; // Show editing tools
+        }
+    }
+
+    function toggleEditingTools() {
+        const tools = document.getElementById('editingTools');
+        tools.style.display = tools.style.display === 'none' || tools.style.display === '' ? 'block' : 'none';
+    }
+
+    function selectArea() {
+        if (fileUploaded) {
+            document.getElementById('properties').style.display = 'block';
+            document.getElementById('properties').innerText = "Selected Item: Sample Area";
+            document.getElementById('layerManagement').style.display = 'block'; // Show layer management
+        }
+    }
+
+    function confirmEditing() {
+        if (fileUploaded) {
+            document.getElementById('downloadButton').style.display = 'block';
+        }
+    }
+
+    function downloadFile() {
+        const format = prompt("Please enter the format for download (PDF or PNG):").toLowerCase();
+        if (format === 'pdf' || format === 'png') {
+            alert(`Starting download as ${format.toUpperCase()}...`);
+            // Implement actual file generation and download logic here
+        } else {
+            alert("Invalid format. Please enter either 'PDF' or 'PNG'.");
+        }
+    }
+</script>
+
+</body>
+</html>
