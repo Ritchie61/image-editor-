@@ -19,3 +19,15 @@ const Upload = ({ onFileUpload }) => {
             setUploading(false);
         }
     });
+
+    return (
+        <div {...getRootProps()} className="upload-area">
+            <input {...getInputProps()} />
+            <p>Drag & drop an image, or click to select a file</p>
+            {uploading && <p>Uploading...</p>}
+        </div>
+    );
+};
+
+export default Upload;
+
