@@ -1,6 +1,7 @@
 ##Image Editor
 
 A simple web-based image editor that allows users to upload image files and edit text and images directly within the editor.
+(For detailed documentation please refer to [DOCUMENTATION.md](docs/DOCUMENTATION.md))
 
 ## Table of Contents
 - [Features](#features)
