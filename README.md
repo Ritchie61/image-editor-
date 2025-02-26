@@ -81,7 +81,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or suggestions, please reach out:
 
-- [Your Name](your-email@example.com)
+- [Nelco Wai](nelcowara@gmail.com)
 - GitHub: [Ritchie61](https://github.com/Ritchie61)
 
 ---
