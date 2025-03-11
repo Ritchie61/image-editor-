@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  file-service:
+    image: file-service:latest
+    ports:
+      - "8001:8001"
+    deploy:
+      replicas: 2
+
+  text-service:
+    image: text-service:latest
+    ports:
+      - "8002:8002"
+    deploy:
+      replicas: 2
+
+  image-service:
+    image: image-service:latest
+    ports:
+      - "8003:8003"
+    deploy:
+      replicas: 2
+
+  font-service:
+    image: font-service:latest
+    ports:
+      - "8004:8004"
+    deploy:
+      replicas: 2
+
+  api-gateway:
+    image: api-gateway:latest
+    ports:
+      - "8080:8080"
+    deploy:
+      replicas: 2
+
+networks:
+  default:
+    driver: bridge
