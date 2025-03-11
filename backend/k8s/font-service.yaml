@@ -1,0 +1,79 @@
+yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: font-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: font-service
+  template:
+    metadata:
+      labels:
+        app: font-service
+    spec:
+      containers:
+      - name: font-service
+        image: font-service:latest
+        ports:
+        - containerPort: 8004
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: font-service
+spec:
+  selector:
+    app: font-service
+  ports:
+  - protocol: TCP
+    port: 8004
+    targetPort: 8004
+```
+
+### Key Components:
+- **Deployment**: Configures the `font-service` with 2 replicas.
+- **Service**: Exposes the `font-service` on port `8004`.
+
+You can modify any parameters according to your requirements!Here’s a `font-service.yaml` file that mirrors the structure of your other service files. It defines both the Deployment and Service for the `font-service`:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: font-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: font-service
+  template:
+    metadata:
+      labels:
+        app: font-service
+    spec:
+      containers:
+      - name: font-service
+        image: font-service:latest
+        ports:
+        - containerPort: 8004
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: font-service
+spec:
+  selector:
+    app: font-service
+  ports:
+  - protocol: TCP
+    port: 8004
+    targetPort: 8004
+```
+
+### Key Components:
+- **Deployment**: Configures the `font-service` with 2 replicas.
+- **Service**: Exposes the `font-service` on port `8004`.
+
+You can modify any parameters according to your requirements!
