@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test:
+  node-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,8 +21,31 @@ jobs:
       with:
         node-version: '14' # Specify your Node.js version
 
-    - name: Install dependencies
+    - name: Install Node.js dependencies
       run: npm install
 
-    - name: Run tests
+    - name: Run Node.js tests
       run: npm test
+
+  python-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # Specify your Python version
+
+    - name: Install Python dependencies
+      run: |
+        pip install pytest
+        pip install -r requirements.txt  # If you have a requirements.txt file
+
+    - name: Run Python tests
+      run: |
+        pytest  # This runs all tests in the repository
+
+
