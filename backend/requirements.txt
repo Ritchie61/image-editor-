@@ -1,0 +1,27 @@
+# Web Framework
+fastapi>=0.78.0       # FastAPI framework, replace with flask if using Flask
+uvicorn>=0.18.0       # ASGI server for FastAPI (for running the app)
+
+# Database (if applicable)
+sqlalchemy>=1.4.0     # SQL toolkit and ORM
+databases>=0.5.0      # Async support for SQLAlchemy (if using async)
+
+# Testing Libraries
+pytest>=7.0           # Core testing framework
+pytest-cov>=2.12.0    # Coverage reporting for tests
+pytest-mock>=3.6.0    # Mocking utilities for tests
+pytest-asyncio>=0.18.0 # For testing async code (if applicable)
+
+# Optional: Additional Libraries
+pydantic>=1.9.0       # Data validation and settings management
+aiofiles>=0.8.0       # For handling file I/O asynchronously
+httpx>=0.23.0         # For making HTTP requests (useful for testing APIs)
+python-dotenv>=0.19.0 # For loading environment variables from a .env file
+
+# For AI and Image Processing (if applicable)
+opencv-python-headless>=4.5.0 # For image processing tasks
+pillow>=9.0.0         # For image handling
+tesseract-ocr          # For OCR functionality, install separately
+
+# Optional: Deployment and Server
+gunicorn>=20.1.0      # WSGI server for running Flask apps
