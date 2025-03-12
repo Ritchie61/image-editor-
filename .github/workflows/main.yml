@@ -41,11 +41,8 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        pip install pytest
-        pip install -r requirements.txt  # If you have a requirements.txt file
+        pip install -r backend/requirements.txt  # Adjust path if necessary
 
     - name: Run Python tests
       run: |
         pytest  # This runs all tests in the repository
-
-
