@@ -1,0 +1,41 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^17.0.0",                // Replace with your desired React version
+    "react-dom": "^17.0.0",            // Replace with your desired ReactDOM version
+    "react-scripts": "4.0.3",          // Scripts for Create React App
+    "axios": "^0.21.1"                 // For making HTTP requests (optional)
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.0", // Testing library for React
+    "@testing-library/jest-dom": "^5.16.4", // Custom matchers for Jest
+    "jest": "^27.0.0",                 // JavaScript testing framework
+    "babel-jest": "^27.0.0"            // Jest integration with Babel
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
