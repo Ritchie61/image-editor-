@@ -21,6 +21,9 @@ jobs:
       with:
         node-version: '14' # Specify your Node.js version
 
+    - name: Clean npm cache
+      run: npm cache clean --force
+
     - name: Install Node.js dependencies
       run: npm install
 
