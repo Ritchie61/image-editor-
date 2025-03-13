@@ -1,25 +1,41 @@
 {
-  "name": "image-editor-",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "A project combining Node.js and Python for backend services.",
-  "main": "index.js", 
+  "private": true,
   "scripts": {
-    "test": "echo \"No tests specified\" && exit 0",
-    "start": "node run.js", // Adjust to the entry point if needed
-    "install-backend-deps": "pip install -r backend/requirements.txt" // Example script for installing Python dependencies
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
-    // Add your Node.js dependencies here
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "4.0.3",
+    "axios": "^0.21.1"
   },
   "devDependencies": {
-    // Add your development dependencies here
+    "@testing-library/react": "^12.1.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "jest": "^27.0.0",
+    "babel-jest": "^27.0.0"
   },
-  "keywords": [
-    "node",
-    "python",
-    "backend",
-    "api"
-  ],
-  "author": "Your Name",
-  "license": "ISC"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
