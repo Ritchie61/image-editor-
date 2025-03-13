@@ -1,0 +1,25 @@
+{
+  "name": "image-editor",
+  "version": "1.0.0",
+  "description": "A project combining Node.js and Python for backend services.",
+  "main": "index.js", 
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0",
+    "start": "node run.js", // Adjust to the entry point if needed
+    "install-backend-deps": "pip install -r backend/requirements.txt" // Example script for installing Python dependencies
+  },
+  "dependencies": {
+    // Add your Node.js dependencies here
+  },
+  "devDependencies": {
+    // Add your development dependencies here
+  },
+  "keywords": [
+    "node",
+    "python",
+    "backend",
+    "api"
+  ],
+  "author": "Your Name",
+  "license": "ISC"
+}
