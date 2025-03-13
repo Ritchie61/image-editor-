@@ -9,16 +9,16 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "react": "^17.0.0",                // Replace with your desired React version
-    "react-dom": "^17.0.0",            // Replace with your desired ReactDOM version
-    "react-scripts": "4.0.3",          // Scripts for Create React App
-    "axios": "^0.21.1"                 // For making HTTP requests (optional)
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "4.0.3",
+    "axios": "^0.21.1"
   },
   "devDependencies": {
-    "@testing-library/react": "^12.1.0", // Testing library for React
-    "@testing-library/jest-dom": "^5.16.4", // Custom matchers for Jest
-    "jest": "^27.0.0",                 // JavaScript testing framework
-    "babel-jest": "^27.0.0"            // Jest integration with Babel
+    "@testing-library/react": "^12.1.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "jest": "^27.0.0",
+    "babel-jest": "^27.0.0"
   },
   "eslintConfig": {
     "extends": [
