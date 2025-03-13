@@ -1,5 +1,5 @@
 {
-  "name": "image-editor",
+  "name": "image-editor-",
   "version": "1.0.0",
   "description": "A project combining Node.js and Python for backend services.",
   "main": "index.js", 
