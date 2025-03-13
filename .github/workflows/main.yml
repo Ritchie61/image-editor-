@@ -37,10 +37,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Leptonica dependency
+    - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libleptonica-dev
+        sudo apt-get install -y libleptonica-dev tesseract-ocr  # Install both Leptonica and Tesseract
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -50,7 +50,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r backend/requirements.txt  # Adjust path if necessary
+        pip install -r requirements.txt  # Adjust path if necessary
 
     - name: Run Python tests
       run: |
