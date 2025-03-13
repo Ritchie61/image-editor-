@@ -21,7 +21,9 @@ python-dotenv>=0.19.0 # For loading environment variables from a .env file
 # For AI and Image Processing (if applicable)
 opencv-python-headless>=4.5.0 # For image processing tasks
 pillow>=9.0.0         # For image handling
-tesseract-ocr          # For OCR functionality, install separately
+
+# For OCR functionality, installed separately in the workflow
+# tesseract-ocr should not be listed here as it is installed via package manager
 
 # Optional: Deployment and Server
 gunicorn>=20.1.0      # WSGI server for running Flask apps
