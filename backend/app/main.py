@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import file_routes, text_routes, image_routes, font_routes
+from .routes import file_routes, text_routes, image_routes, font_routes
 
 app = FastAPI(title="Image & Text Editor API")
 
