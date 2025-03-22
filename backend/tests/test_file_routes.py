@@ -1,7 +1,7 @@
 import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from app.main import app  # Adjust the import based on your app's structure
+from backend.app.main import app  # Adjusted import path
 
 client = TestClient(app)
 
@@ -34,4 +34,3 @@ def test_download_file():
 def test_download_nonexistent_file():
     response = client.get("/files/download/nonexistent_id")
     assert response.status_code == 404  # Adjust based on your error handling
-
