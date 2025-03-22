@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File
-from app.services import text_service
+from app/services import text_service
 
 router = APIRouter(prefix="/text", tags=["Text Processing"])
 
