@@ -1,6 +1,6 @@
 import os
 import pytest
-from image_service import segment_image, replace_image  # Adjust the import based on your structure
+from backend.app.image_service import segment_image, replace_image  # Adjust the import based on your structure
 
 # Ensure temp directory exists
 os.makedirs('temp', exist_ok=True)
