@@ -1,3 +1,5 @@
+# Fix for backend/tests/test_image_service.py
+
 import os
 import asyncio
 import pytest
@@ -49,9 +51,10 @@ def test_replace_image():
     result = replace_image(data)
     assert result['message'] == "Image replaced successfully"
 
+# Fix: Define input_data and expected_output
 @pytest.mark.asyncio
 async def test_segment_image_success():
-    # Assuming segment_image is a coroutine
+    input_data = ...  # Define input_data based on your function requirements
+    expected_output = ...  # Define expected_output based on your function requirements
     result = await segment_image(input_data)
     assert result == expected_output
-
