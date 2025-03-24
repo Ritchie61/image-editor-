@@ -1,5 +1,3 @@
-# Fix for backend/tests/test_image_service.py
-
 import os
 import asyncio
 import pytest
