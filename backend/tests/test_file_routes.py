@@ -2,6 +2,7 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from backend import app  # Adjusted import path
+from ..services import file_service
 
 client = TestClient(app)
 
