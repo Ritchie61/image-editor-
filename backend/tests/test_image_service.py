@@ -1,4 +1,5 @@
 import os
+import asyncio
 import pytest
 from backend.app.services.image_service import segment_image, replace_image  # Adjust the import based on your structure
 
@@ -47,3 +48,10 @@ def test_replace_image():
     data = {'dummy_key': 'dummy_value'}
     result = replace_image(data)
     assert result['message'] == "Image replaced successfully"
+
+@pytest.mark.asyncio
+async def test_segment_image_success():
+    # Assuming segment_image is a coroutine
+    result = await segment_image(input_data)
+    assert result == expected_output
+
